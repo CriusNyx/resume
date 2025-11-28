@@ -1,0 +1,121 @@
+import type { PropsWithChildren } from "react";
+import TommysBulletPoints from "../data/TommysBulletPoints";
+import WOFBulletPoints from "../data/WOFBulletPoints";
+import { PlayVideoOnEnter } from "../common/PlayVideoOnEnter";
+import React from "react";
+import carAnimation from "../assets/Carwash.webm";
+import boardsAnimation from "../assets/Boards.webm";
+
+interface BadgeProps extends PropsWithChildren {
+  color?: string;
+}
+
+function Badge(props: BadgeProps) {
+  return (
+    <div
+      className="p-2 px-4 bg-rose-800 rounded-full"
+      style={{ backgroundColor: props.color }}
+    >
+      <p className="text-shadow-md/30">
+        {props.children}
+      </p>
+    </div>
+  );
+}
+
+interface BulletItemProps {
+  items: string[];
+}
+
+export function BulletList(props: BulletItemProps) {
+  return (
+    <div className="mt-5 ml-4">
+      {props.items.map((bullet, i) => (
+        <Bullet key={`bullet-${i}`} text={bullet} />
+      ))}
+    </div>
+  );
+}
+
+interface BulletProps {
+  text: string;
+}
+
+export function Bullet(props: BulletProps) {
+  const { text } = props;
+  const indented = text.startsWith("  ");
+  const label = text.trimStart();
+  return <li className={`${indented ? "ml-5" : ""}`}>{label}</li>;
+}
+
+const tommysTools = [
+  { name: "React Native", color: "#58c4dc" },
+  { name: "JavaScript", color: "#e4a125" },
+  { name: "TypeScript", color: "#2d79c7" },
+  { name: "Kotlin", color: "#fa8b08" },
+  { name: "Swift", color: "#e44f38" },
+] satisfies Tools[];
+
+const wofTools = [
+  { name: "React", color: "#58c4dc" },
+  { name: "JavaScript", color: "#e4a125" },
+  { name: "TypeScript", color: "#2d79c7" },
+  { name: "C#", color: "#611e73" },
+  { name: "Xamarin", color: "#3498db" },
+  { name: "ASP.NET", color: "#5c2d91" },
+] satisfies Tools[];
+
+export function WorkHistory() {
+  return (
+    <div className="flex flex-col max-w-300 mx-auto items-stretch bg-black/60 p-5 rounded-2xl m-5">
+      <h1 className="self-start">Work History</h1>
+      <Work
+        companyName="Tommy's Express"
+        jobName="App Developer"
+        tools={tommysTools}
+        bullets={TommysBulletPoints}
+        GraphicComponent={() => <PlayVideoOnEnter src={carAnimation} />}
+      />
+      <Work
+        companyName="World of Floors"
+        jobName="Full Stack Developer"
+        tools={wofTools}
+        bullets={WOFBulletPoints}
+        GraphicComponent={() => <PlayVideoOnEnter src={boardsAnimation} />}
+      />
+    </div>
+  );
+}
+
+interface Tools {
+  name: string;
+  color?: string;
+}
+
+interface WorkProps {
+  companyName: string;
+  jobName: string;
+  tools: Tools[];
+  bullets: string;
+  GraphicComponent?: React.ComponentType<object>;
+}
+
+function Work(props: WorkProps) {
+  return (
+    <div className="flex flex-row justify-between text-left">
+      <div className="flex flex-1 flex-col">
+        <h2>{props.companyName}</h2>
+        <h2 className="pb-5">&emsp;{props.jobName}</h2>
+        <div className="flex flex-row gap-2 flex-wrap">
+          {props.tools.map((tool, i) => (
+            <Badge key={i} color={tool.color}>{tool.name}</Badge>
+          ))}
+        </div>
+        <BulletList items={props.bullets.split("\n")} />
+      </div>
+      <div className="flex flex-1 flex-col justify-center">
+        {props.GraphicComponent && <props.GraphicComponent />}
+      </div>
+    </div>
+  );
+}

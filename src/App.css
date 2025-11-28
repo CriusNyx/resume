@@ -1,0 +1,61 @@
+#root {
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.title-background {
+  --s: 150px; /* control the size of the grid */
+  --n: 4; /* control the granularity */
+  --t: 2px; /* the thickness */
+  --g: 10px; /* the gap between dashes */
+
+  --c: #556270 25%, #0000 0;
+  background: conic-gradient(at var(--g) var(--t), var(--c))
+      calc((var(--s) / var(--n) - var(--g) + var(--t)) / 2) 0 /
+      calc(var(--s) / var(--n)) var(--s),
+    conic-gradient(from 180deg at var(--t) var(--g), var(--c)) 0
+      calc((var(--s) / var(--n) - var(--g) + var(--t)) / 2) / var(--s)
+      calc(var(--s) / var(--n));
+}
+
+.body-background {
+  background-blend-mode: multiply;
+  background: linear-gradient(225deg, white, oklch(78.9% 0.154 211.53)),
+    linear-gradient(135deg, white, oklch(70.4% 0.191 22.216)),
+    linear-gradient(0deg, gray 0%, black 90%);
+}
