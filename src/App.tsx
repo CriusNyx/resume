@@ -5,25 +5,20 @@ import { WorkHistory } from "./WorkHistory/WorkHistory";
 import { useRef } from "react";
 
 function App() {
-  const divRef = useRef<HTMLDivElement>(null);
-
-  const scroll = useScroll({ container: divRef as any });
+  const scrollRef = useRef(null);
+  const scroll = useScroll({ container: scrollRef });
 
   const opacity = useTransform(() => {
     return interpolate([500, 1000], [0, 1])(scroll.scrollY.get());
   });
 
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-screen overflow-clip">
       <motion.div
         className="absolute w-full h-full body-background"
         style={{ opacity }}
       />
-
-      <div
-        className="absolute w-full h-full"
-        ref={divRef}
-      >
+      <div ref={scrollRef} className="absolute w-full h-full overflow-scroll">
         <Landing />
         <WorkHistory />
       </div>
