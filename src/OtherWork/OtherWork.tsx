@@ -118,12 +118,12 @@ export function OtherWork() {
     <div className="flex flex-col items-start my-5 w-full ">
       <h2>Other Work</h2>
       <div className={`flex ${isMobile ? "flex-col" : "flex-row"} gap-5`}>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 flex-1">
           {otherWorks.filter((_x, i) => i % 2 === 0).map((x, i) => (
             <WorkCard key={`work-item-${i}`} {...x} />
           ))}
         </div>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 flex-1">
           {otherWorks.filter((_x, i) => i % 2 === 1).map((x, i) => (
             <WorkCard key={`work-item-${i}`} {...x} />
           ))}
