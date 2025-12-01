@@ -72,6 +72,12 @@ const otherWorks: WorkCardProps[] = [
     description:
       "I create my own music using the music coding software Strudel.",
   },
+  {
+    title: "Resume Site",
+    role: WorkRole.Creator,
+    description:
+      "The resume site your're looking at. Created this using React, Motion, Tailwind, and some other bits and bobs. The 3D animations were created by me in Blender.",
+  },
 ];
 
 const roleBadgeStyle: Record<WorkRole, React.CSSProperties> = {

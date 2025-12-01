@@ -78,14 +78,14 @@ export function Title() {
           Component={motion.div}
           transition={{ delay: .75 }}
         >
-          Driven,
+          Developer,
         </DropIn>
         <DropIn
           className="pl-1"
           Component={motion.div}
           transition={{ delay: 1.25 }}
         >
-          Creative,
+          Arist,
         </DropIn>
         <DropIn
           className="pl-1"
