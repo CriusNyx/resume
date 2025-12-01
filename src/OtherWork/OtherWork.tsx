@@ -76,7 +76,7 @@ const otherWorks: WorkCardProps[] = [
     title: "Resume Site",
     role: WorkRole.Creator,
     description:
-      "The resume site your're looking at. Created this using React, Motion, Tailwind, and some other bits and bobs. The 3D animations were created by me in Blender.",
+      "The resume site your're looking at. I created this using React, Motion, Tailwind, and some other bits and bobs. The 3D animations were created by me in Blender.",
   },
 ];
 

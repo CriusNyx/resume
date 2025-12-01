@@ -92,7 +92,7 @@ export function Title() {
           Component={motion.div}
           transition={{ delay: 1.75 }}
         >
-          Passionate
+          Problem Solver
         </DropIn>
       </div>
     </div>
