@@ -1,8 +1,10 @@
 import { useInView } from "motion/react";
 import { useEffect, useRef } from "react";
+import { ChevronUp } from "react-feather";
 
 export interface PlayVideoOnEnterProps {
   src: string;
+  includeBlenderNote?: boolean;
 }
 
 export function PlayVideoOnEnter(props: PlayVideoOnEnterProps) {
@@ -11,14 +13,19 @@ export function PlayVideoOnEnter(props: PlayVideoOnEnterProps) {
   const inView = useInView(inViewRef, { once: true, amount: 0.75 });
 
   useEffect(() => {
-    if(inView){
+    if (inView) {
       videoRef.current?.play();
     }
   }, [inView]);
 
   return (
-    <div ref={inViewRef}>
+    <div className="flex flex-col items-center" ref={inViewRef}>
       <video ref={videoRef} src={props.src} />
+      {props.includeBlenderNote && (
+        <p className="text-red-500 flex flex-row items-center">
+          <ChevronUp /> &nbsp; I created this in Blender
+        </p>
+      )}
     </div>
   );
 }

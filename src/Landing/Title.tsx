@@ -1,6 +1,7 @@
 import { motion, type Transition, useTime, useTransform } from "motion/react";
 import type { PropsWithChildren } from "react";
 import { Redact } from "../common/Redact";
+import useIsMobile from "../util/useIsMobile";
 
 type AnimatedComponent =
   | typeof motion.h1
@@ -29,7 +30,7 @@ function DropIn(props: DropInProps) {
 function Dash() {
   const time = useTime();
   const opacity = useTransform(() => {
-    var value = time.get();
+    const value = time.get();
     if (value < 2800) {
       return 0;
     }
@@ -46,11 +47,30 @@ function Dash() {
 }
 
 export function Title() {
+  const { isMobile } = useIsMobile();
+
   return (
     <div className="flex flex-col">
       <DropIn Component={motion.h1}>
         <Redact>RJ Reynolds</Redact>
         <Dash />
+        <motion.div
+          transition={{ delay: 3 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className={`absolute ${isMobile ? "-bottom-20" : "-bottom-10"} ${
+            isMobile ? "-left-10" : "-left-25"
+          } rotate-12`}
+        >
+          <p className="text-[20px]">
+            <a
+              href="mailto:rjreynoldsw@gmail.com"
+              style={{ color: "oklch(82.8% 0.189 84.429)" }}
+            >
+              email: rjreynoldsw@gmail.com
+            </a>
+          </p>
+        </motion.div>
       </DropIn>
       <div className="flex flex-row self-end">
         <DropIn

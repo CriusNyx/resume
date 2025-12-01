@@ -5,6 +5,7 @@ import { PlayVideoOnEnter } from "../common/PlayVideoOnEnter";
 import React from "react";
 import carAnimation from "../assets/Carwash.webm";
 import boardsAnimation from "../assets/Boards.webm";
+import useIsMobile from "../util/useIsMobile";
 
 interface BadgeProps extends PropsWithChildren {
   color?: string;
@@ -67,14 +68,15 @@ const wofTools = [
 
 export function WorkHistory() {
   return (
-    <div className="flex flex-col max-w-300 mx-auto items-stretch bg-black/60 p-5 rounded-2xl m-5">
-      <h1 className="self-start">Work History</h1>
+    <div className="flex flex-col">
       <Work
         companyName="Tommy's Express"
         jobName="App Developer"
         tools={tommysTools}
         bullets={TommysBulletPoints}
-        GraphicComponent={() => <PlayVideoOnEnter src={carAnimation} />}
+        GraphicComponent={() => (
+          <PlayVideoOnEnter src={carAnimation} includeBlenderNote />
+        )}
       />
       <Work
         companyName="World of Floors"
@@ -101,8 +103,14 @@ interface WorkProps {
 }
 
 function Work(props: WorkProps) {
+  const { isMobile } = useIsMobile();
+
   return (
-    <div className="flex flex-row justify-between text-left">
+    <div
+      className={`flex ${
+        isMobile ? "flex-col" : "flex-row"
+      } justify-between text-left`}
+    >
       <div className="flex flex-1 flex-col">
         <h2>{props.companyName}</h2>
         <h2 className="pb-5">&emsp;{props.jobName}</h2>
@@ -111,11 +119,18 @@ function Work(props: WorkProps) {
             <Badge key={i} color={tool.color}>{tool.name}</Badge>
           ))}
         </div>
+        {isMobile && (
+          <div className="flex flex-1 flex-col justify-center">
+            {props.GraphicComponent && <props.GraphicComponent />}
+          </div>
+        )}
         <BulletList items={props.bullets.split("\n")} />
       </div>
-      <div className="flex flex-1 flex-col justify-center">
-        {props.GraphicComponent && <props.GraphicComponent />}
-      </div>
+      {!isMobile && (
+        <div className="flex flex-1 flex-col justify-center">
+          {props.GraphicComponent && <props.GraphicComponent />}
+        </div>
+      )}
     </div>
   );
 }
