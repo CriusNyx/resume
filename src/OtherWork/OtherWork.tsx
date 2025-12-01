@@ -39,7 +39,26 @@ const otherWorks: WorkCardProps[] = [
     description:
       "Like grep, but uses the regex to filter the contents of the line instead of matching lines.",
   },
-
+  {
+    title: "Factory",
+    role: WorkRole.Creator,
+    description:
+      "Domain specific programming language for solving logistics problems. Created for the video game satisfactory," +
+      "but the language can be configured to solve any logistics problem involving production balancing. " +
+      "Factory includes a language server that provides syntax highlighting, code completion, symbol documentation, and type checking.",
+  },
+  {
+    title: "CriusNyxUtil",
+    role: WorkRole.Creator,
+    description:
+      ".NET library I maintain with utilty functions I find myself using over and over again. Automatically deploys on Nuget using Github Actions.",
+  },
+  {
+    title: "CI/CD",
+    role: WorkRole.Creator,
+    description:
+      "I create CI/CD pipelines for automatic deployment for all my new projects.",
+  },
   {
     title: "Blender Art",
     role: WorkRole.Artist,
