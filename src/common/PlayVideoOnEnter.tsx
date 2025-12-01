@@ -4,7 +4,7 @@ import { ChevronUp } from "react-feather";
 
 export interface PlayVideoOnEnterProps {
   src: string;
-  includeBlenderNote?: boolean;
+  blenderBadgeText?: string;
 }
 
 export function PlayVideoOnEnter(props: PlayVideoOnEnterProps) {
@@ -21,9 +21,9 @@ export function PlayVideoOnEnter(props: PlayVideoOnEnterProps) {
   return (
     <div className="flex flex-col items-center" ref={inViewRef}>
       <video ref={videoRef} src={props.src} />
-      {props.includeBlenderNote && (
+      {props.blenderBadgeText && (
         <p className="text-red-500 flex flex-row items-center">
-          <ChevronUp /> &nbsp; I created this in Blender
+          <ChevronUp /> &nbsp; {props.blenderBadgeText}
         </p>
       )}
     </div>

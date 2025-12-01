@@ -75,7 +75,10 @@ export function WorkHistory() {
         tools={tommysTools}
         bullets={TommysBulletPoints}
         GraphicComponent={() => (
-          <PlayVideoOnEnter src={carAnimation} includeBlenderNote />
+          <PlayVideoOnEnter
+            src={carAnimation}
+            blenderBadgeText={"I created this in blender."}
+          />
         )}
       />
       <Work
@@ -83,7 +86,12 @@ export function WorkHistory() {
         jobName="Full Stack Developer"
         tools={wofTools}
         bullets={WOFBulletPoints}
-        GraphicComponent={() => <PlayVideoOnEnter src={boardsAnimation} />}
+        GraphicComponent={() => (
+          <PlayVideoOnEnter
+            src={boardsAnimation}
+            blenderBadgeText={"I also created this in blender."}
+          />
+        )}
       />
     </div>
   );
