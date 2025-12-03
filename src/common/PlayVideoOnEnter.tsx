@@ -1,6 +1,6 @@
 import { useInView } from "motion/react";
 import { useEffect, useRef } from "react";
-import { ChevronUp } from "react-feather";
+import { CornerLeftUp } from "react-feather";
 
 export interface PlayVideoOnEnterProps {
   src: string;
@@ -23,7 +23,7 @@ export function PlayVideoOnEnter(props: PlayVideoOnEnterProps) {
       <video ref={videoRef} src={props.src} />
       {props.blenderBadgeText && (
         <p className="text-red-500 flex flex-row items-center">
-          <ChevronUp /> &nbsp; {props.blenderBadgeText}
+          <CornerLeftUp size={14} /> &nbsp; {props.blenderBadgeText}
         </p>
       )}
     </div>

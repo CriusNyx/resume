@@ -17,7 +17,7 @@ Created the World of Floors Web App for managing projects.
   Implemented web frontend using React Dom and Material UI.
   Integrated web application into API using Axios, Redux, and Redux Thunk.
   Created feature for storing, retrieving, and editing customer information.
-  Implement web sockets to allow for real time synchronization.
+  Implement web sockets to allow for real-time synchronization.
   Created an ordering system to automatically generate vendor orders.
   Created a pick sheet feature to assist warehouse workers in gathering materials for jobs.
   Created an inventory management system for tracking, auditing, and updating inventory information.
