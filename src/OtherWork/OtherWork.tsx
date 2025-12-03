@@ -31,7 +31,7 @@ const otherWorks: WorkCardProps[] = [
     title: "Render",
     role: WorkRole.Creator,
     description:
-      "Command line app for scheduling and running render jobs for blender",
+      "Command line app for scheduling and running render jobs for Blender.",
   },
   {
     title: "Grepline",
@@ -43,7 +43,7 @@ const otherWorks: WorkCardProps[] = [
     title: "Factory",
     role: WorkRole.Creator,
     description:
-      "Domain specific programming language for solving logistics problems. Created for the video game satisfactory, " +
+      "Domain specific programming language for solving logistics problems. Created for the video game Satisfactory, " +
       "but the language can be configured to solve any logistics problem involving production balancing. " +
       "Factory includes a language server that provides syntax highlighting, code completion, symbol documentation, and type checking.",
   },
@@ -64,7 +64,7 @@ const otherWorks: WorkCardProps[] = [
     role: WorkRole.Artist,
     description:
       "I create 3D art, models, materials, shaders, and animation in Blender. Sometimes with procedural generation elements. " +
-      "The animations on this website were created in blender.",
+      "The animations on this website were created in Blender.",
   },
   {
     title: "Strudel Music",

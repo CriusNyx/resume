@@ -77,7 +77,7 @@ export function WorkHistory() {
         GraphicComponent={() => (
           <PlayVideoOnEnter
             src={carAnimation}
-            blenderBadgeText={"I created this in blender."}
+            blenderBadgeText={"I created this in Blender."}
           />
         )}
       />
@@ -89,7 +89,7 @@ export function WorkHistory() {
         GraphicComponent={() => (
           <PlayVideoOnEnter
             src={boardsAnimation}
-            blenderBadgeText={"I also created this in blender."}
+            blenderBadgeText={"I also created this in Blender."}
           />
         )}
       />
