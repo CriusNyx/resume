@@ -13,7 +13,7 @@ Upgraded the look, feel, and performance, and feature set for mobile apps.
   Improved maintainability by removing deprecated libraries and technologies.
   Implemented a dependency injection system for making vendor specific versions of the application.
   Integrated with backend API using Axios, Redux, Redux Thunk, and React Hooks.
-  Created Animations with React Native Animation, and Reanimated.
+  Created animations with React Native Animation, and Reanimated.
   Implemented complex custom controls with user feedback using React Native Gesture Handler.
   Implemented automated testing with Jest.
   Fixed a variety of issues, allowing for React Native Debugger, and other community tools to aid in development.
