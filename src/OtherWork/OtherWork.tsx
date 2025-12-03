@@ -98,7 +98,7 @@ export function WorkCard(props: WorkCardProps) {
       <div className="flex flex-row items-center justify-between w-full">
         <h3>{props.title}</h3>
         <p
-          className="p-1 rounded-md text-white"
+          className="p-1 px-2 rounded-md text-white"
           style={roleBadgeStyle[props.role]}
         >
           {props.role}

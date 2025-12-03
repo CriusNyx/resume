@@ -85,7 +85,7 @@ export function Title() {
           Component={motion.div}
           transition={{ delay: 1.25 }}
         >
-          Arist,
+          Artist,
         </DropIn>
         <DropIn
           className="pl-1"
