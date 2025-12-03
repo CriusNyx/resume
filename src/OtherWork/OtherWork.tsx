@@ -43,7 +43,7 @@ const otherWorks: WorkCardProps[] = [
     title: "Factory",
     role: WorkRole.Creator,
     description:
-      "Domain specific programming language for solving logistics problems. Created for the video game satisfactory," +
+      "Domain specific programming language for solving logistics problems. Created for the video game satisfactory, " +
       "but the language can be configured to solve any logistics problem involving production balancing. " +
       "Factory includes a language server that provides syntax highlighting, code completion, symbol documentation, and type checking.",
   },
