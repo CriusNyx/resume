@@ -22,7 +22,7 @@ function App() {
       <div ref={scrollRef} className="absolute w-full h-full overflow-scroll">
         <Landing />
         <div className="flex flex-col mx-auto max-w-300">
-          <div className="flex flex-col mx-5 items-stretch bg-black/60 p-5 rounded-2xl m-5">
+          <div className="flex flex-col mx-5 items-stretch bg-black/70 p-5 rounded-2xl m-5">
             <WorkHistory />
             <OtherWork />
           </div>

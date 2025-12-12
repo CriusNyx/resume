@@ -14,7 +14,7 @@ interface BadgeProps extends PropsWithChildren {
 function Badge(props: BadgeProps) {
   return (
     <div
-      className="p-2 px-4 bg-rose-800 rounded-full"
+      className="p-2 px-4 bg-rose-800 rounded-full font-medium text-white"
       style={{ backgroundColor: props.color }}
     >
       <p className="text-shadow-md/30">
@@ -50,19 +50,19 @@ export function Bullet(props: BulletProps) {
 }
 
 const tommysTools = [
-  { name: "React Native", color: "#58c4dc" },
-  { name: "JavaScript", color: "#e4a125" },
+  { name: "React Native", color: "#2d79c7" },
+  { name: "JavaScript", color: "#cc9020" },
   { name: "TypeScript", color: "#2d79c7" },
-  { name: "Kotlin", color: "#fa8b08" },
-  { name: "Swift", color: "#e44f38" },
+  { name: "Kotlin", color: "#cc6f06" },
+  { name: "Swift", color: "#b23e2c" },
 ] satisfies Tools[];
 
 const wofTools = [
-  { name: "React", color: "#58c4dc" },
-  { name: "JavaScript", color: "#e4a125" },
+  { name: "React", color: "#2d79c7" },
+  { name: "JavaScript", color: "#cc9020" },
   { name: "TypeScript", color: "#2d79c7" },
   { name: "C#", color: "#611e73" },
-  { name: "Xamarin", color: "#3498db" },
+  { name: "Xamarin", color: "#2d79c7" },
   { name: "ASP.NET", color: "#5c2d91" },
 ] satisfies Tools[];
 

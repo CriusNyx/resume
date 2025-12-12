@@ -22,7 +22,7 @@ export function PlayVideoOnEnter(props: PlayVideoOnEnterProps) {
     <div className="flex flex-col items-center" ref={inViewRef}>
       <video ref={videoRef} src={props.src} />
       {props.blenderBadgeText && (
-        <p className="text-red-500 flex flex-row items-center">
+        <p className="text-red-400 flex flex-row items-center shadow-2xl">
           <CornerLeftUp size={14} /> &nbsp; {props.blenderBadgeText}
         </p>
       )}
