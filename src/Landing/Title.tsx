@@ -1,7 +1,14 @@
-import { motion, type Transition, useTime, useTransform } from "motion/react";
-import type { PropsWithChildren } from "react";
+import {
+  motion,
+  scale,
+  type Transition,
+  useTime,
+  useTransform,
+} from "motion/react";
+import type { CSSProperties, PropsWithChildren } from "react";
 import { Redact } from "../common/Redact";
 import useIsMobile from "../util/useIsMobile";
+import { safe } from "../util";
 
 type AnimatedComponent =
   | typeof motion.h1
@@ -50,7 +57,10 @@ export function Title() {
   const { isMobile } = useIsMobile();
 
   return (
-    <div className="flex flex-col">
+    <div
+      className="flex flex-col"
+      style={safe(isMobile && { scale: 0.7, translate: "0 -5vh" })}
+    >
       <DropIn Component={motion.h1}>
         <Redact>RJ Reynolds</Redact>
         <Dash />
