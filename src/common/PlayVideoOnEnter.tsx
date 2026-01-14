@@ -1,5 +1,5 @@
 import { useInView } from "motion/react";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { CornerLeftUp, Play } from "react-feather";
 
 export interface PlayVideoOnEnterProps {
